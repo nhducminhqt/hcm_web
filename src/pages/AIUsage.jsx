@@ -68,6 +68,65 @@ function AIUsage() {
           </div>
         </section>
 
+        <section className="ai-contributors">
+          <h2>👥 Contributors</h2>
+          <div className="contributors-grid">
+            <div className="contributor-card">
+              <h3>Hoàng Bảo Ngọc</h3>
+              <ul>
+                <li>
+                  <strong>Nội dung:</strong> Hoàn thiện phần Lý thuyết — biên
+                  tập, trích dẫn nguồn chính thống.
+                </li>
+                <li>
+                  <strong>Thiết kế:</strong> Đề xuất ý tưởng visual cho hero và
+                  section intro.
+                </li>
+                <li>
+                  <strong>Code:</strong> Kiểm tra hiển thị mobile và
+                  proofreading nội dung trên giao diện.
+                </li>
+              </ul>
+            </div>
+
+            <div className="contributor-card">
+              <h3>Phạm Gia Huy</h3>
+              <ul>
+                <li>
+                  <strong>Nội dung:</strong> Xây dựng câu hỏi cho Quiz và nội
+                  dung Practice.
+                </li>
+                <li>
+                  <strong>Thiết kế:</strong> Thiết kế timeline UI, icons, và
+                  trải nghiệm người dùng.
+                </li>
+                <li>
+                  <strong>Code:</strong> Triển khai timeline interactive,
+                  accessibility và keyboard flow.
+                </li>
+              </ul>
+            </div>
+
+            <div className="contributor-card">
+              <h3>Nguyễn Mạnh Dũng</h3>
+              <ul>
+                <li>
+                  <strong>Nội dung:</strong> Thu thập ảnh, chú thích và kiểm
+                  chứng tư liệu hình ảnh.
+                </li>
+                <li>
+                  <strong>Thiết kế:</strong> Tối ưu hoá assets (ảnh, svg) và
+                  moodboard màu sắc.
+                </li>
+                <li>
+                  <strong>Code:</strong> Tối ưu hiệu năng (lazy-load ảnh, tối ưu
+                  bundle), viết tests cơ bản.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section
           ref={fieldsRef}
           className={`ai-fields scroll-reveal ${
