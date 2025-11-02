@@ -47,12 +47,7 @@ function AIUsage() {
               <p className="tool-provider">Google</p>
               <p className="tool-purpose">Tóm tắt tài liệu</p>
             </div>
-            <div className="tool-card">
-              <div className="tool-logo">🔍</div>
-              <h3>Grok</h3>
-              <p className="tool-provider">xAI</p>
-              <p className="tool-purpose">Tìm kiếm & Phân tích</p>
-            </div>
+
             <div className="tool-card">
               <div className="tool-logo">💬</div>
               <h3>ChatGPT</h3>
