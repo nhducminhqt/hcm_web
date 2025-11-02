@@ -1,6 +1,5 @@
 .ai-usage {
   min-height: 100vh;
-  background: #f8f9fa;
 }
 
 .ai-header {
@@ -30,11 +29,10 @@ section {
 }
 
 section h2 {
-  color: #9c27b0;
   font-size: 2rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 3px solid #ba68c8;
+  border-bottom: 3px solid #d1433c;
 }
 
 .author {
@@ -59,17 +57,18 @@ section h2 {
 }
 
 .tool-card {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  background: linear-gradient(135deg, #ffb3b3 0%, #fff9c4 100%);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  border: 2px solid #9c27b0;
+  border: 2px solid #ffb3b3;
   transition: all 0.3s ease;
+  color: #d1433c;
 }
 
 .tool-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 179, 179, 0.18), 0 0 0 4px #fff9c444;
 }
 
 .tool-logo {
@@ -78,7 +77,7 @@ section h2 {
 }
 
 .tool-card h3 {
-  color: #9c27b0;
+  color: #d1433c;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
@@ -110,8 +109,8 @@ section h2 {
 }
 
 .field-card:hover {
-  border-color: #9c27b0;
-  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.2);
+  border-color: #b04927;
+  box-shadow: 0 8px 20px rgba(176, 53, 39, 0.2);
 }
 
 .field-icon {
@@ -120,7 +119,7 @@ section h2 {
 }
 
 .field-card h3 {
-  color: #9c27b0;
+  color: #ff0000;
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
@@ -154,7 +153,7 @@ section h2 {
 }
 
 .prompt-group h3 {
-  color: #9c27b0;
+  color: #ff0000;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
 }
@@ -178,8 +177,8 @@ section h2 {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #9c27b0 0%, #ba68c8 100%);
-  color: white;
+  background: linear-gradient(135deg, #ffb3b3 0%, #ffe0e0 100%);
+  color: #d1433c;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -212,9 +211,9 @@ section h2 {
 }
 
 .principle-card:hover {
-  border-color: #9c27b0;
+  border-color: #ff0000;
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(156, 39, 176, 0.2);
+  box-shadow: 0 8px 20px rgba(176, 39, 39, 0.2);
 }
 
 .principle-icon {
@@ -223,7 +222,7 @@ section h2 {
 }
 
 .principle-card h3 {
-  color: #9c27b0;
+  color: #ff0000;
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
@@ -254,14 +253,14 @@ section h2 {
 }
 
 .conclusion-box {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   padding: 2.5rem;
   border-radius: 12px;
-  border: 2px solid #9c27b0;
+  border: 2px solid #ffffff;
 }
 
 .conclusion-box h3 {
-  color: #9c27b0;
+  color: #ff0000;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -280,7 +279,7 @@ section h2 {
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #9c27b0;
+  border-left: 4px solid #ff0000;
   font-weight: 500;
 }
 

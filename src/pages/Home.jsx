@@ -1,6 +1,19 @@
 import "./Home.css";
+import useScrollReveal from "../hooks/useScrollReveal";
+import vnFlag from "../../vn.png";
+import clockIcon from "../../clock.png";
+import battleIcon from "../../battle.png";
+import earthIcon from "../../earth.png";
 
 function Home() {
+  const [introRef, introVisible] = useScrollReveal({ triggerOnce: false });
+  const [statsRef, statsVisible] = useScrollReveal({ triggerOnce: false });
+  const [significanceRef, significanceVisible] = useScrollReveal({
+    triggerOnce: false,
+  });
+  const [quoteRef, quoteVisible] = useScrollReveal({ triggerOnce: false });
+  const [ctaRef, ctaVisible] = useScrollReveal({ triggerOnce: false });
+
   return (
     <div className="home">
       <section className="hero">
@@ -8,7 +21,6 @@ function Home() {
           <h1 className="hero-title">
             <span className="star">⭐</span>
             Chiến Thắng Điện Biên Phủ
-            <span className="star">⭐</span>
           </h1>
           <p className="hero-date">7 Tháng 5, 1954</p>
           <p className="hero-subtitle">
@@ -18,7 +30,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="intro-section">
+      <section
+        ref={introRef}
+        className={`intro-section scroll-reveal ${
+          introVisible ? "revealed" : ""
+        }`}
+      >
         <div className="container">
           <div className="intro-card">
             <h2>🏆 Chiến Thắng Vĩ Đại</h2>
@@ -29,32 +46,50 @@ function Home() {
               kết toàn dân tộc dưới sự lãnh đạo sáng suốt của Đảng Cộng sản Việt
               Nam và Chủ tịch Hồ Chí Minh.
             </p>
+            <div className="intro-image">
+              <img src="../../dbp1.jpg" alt="Chiến dịch Điện Biên Phủ" />
+            </div>
           </div>
-
-          <div className="stats-grid">
+          <div
+            ref={statsRef}
+            className={`stats-grid scroll-reveal ${
+              statsVisible ? "revealed" : ""
+            }`}
+          >
             <div className="stat-card">
-              <div className="stat-icon">📅</div>
+              <div className="stat-icon">
+                <img
+                  src={clockIcon}
+                  alt="Ngày đêm chiến đấu"
+                  className="stat-img"
+                />
+              </div>
               <div className="stat-number">56</div>
               <div className="stat-label">Ngày đêm chiến đấu</div>
               <div className="stat-detail">13/3 - 7/5/1954</div>
             </div>
 
             <div className="stat-card">
-              <div className="stat-icon">⚔️</div>
+              <div className="stat-icon">
+                <img
+                  src={battleIcon}
+                  alt="Quân Pháp bị tiêu diệt"
+                  className="stat-img"
+                />
+              </div>
               <div className="stat-number">16,000+</div>
               <div className="stat-label">Quân Pháp bị tiêu diệt</div>
               <div className="stat-detail">Kể cả De Castries</div>
             </div>
 
             <div className="stat-card">
-              <div className="stat-icon">🎖️</div>
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Thắng lợi hoàn toàn</div>
-              <div className="stat-detail">Kết thúc chiến tranh</div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon">🌍</div>
+              <div className="stat-icon">
+                <img
+                  src={earthIcon}
+                  alt="Ý nghĩa lịch sử"
+                  className="stat-img"
+                />
+              </div>
               <div className="stat-number">∞</div>
               <div className="stat-label">Ý nghĩa lịch sử</div>
               <div className="stat-detail">Thế giới ngưỡng mộ</div>
@@ -63,14 +98,19 @@ function Home() {
         </div>
       </section>
 
-      <section className="significance-section">
+      <section
+        ref={significanceRef}
+        className={`significance-section scroll-reveal ${
+          significanceVisible ? "revealed" : ""
+        }`}
+      >
         <div className="container">
           <h2 className="section-title">🌟 Ý Nghĩa Lịch Sử</h2>
 
           <div className="significance-grid">
             <div className="significance-card">
               <div className="card-header">
-                <span className="card-icon">🇻🇳</span>
+                <img src={vnFlag} alt="VN" className="flag-icon" />
                 <h3>Đối với Việt Nam</h3>
               </div>
               <ul>
@@ -110,7 +150,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="quote-section">
+      <section
+        ref={quoteRef}
+        className={`quote-section scroll-reveal ${
+          quoteVisible ? "revealed" : ""
+        }`}
+      >
         <div className="container">
           <div className="quote-card">
             <div className="quote-mark">"</div>
@@ -121,13 +166,18 @@ function Home() {
               quyết chiến, quyết thắng của toàn Đảng, toàn dân và toàn quân ta.
             </p>
             <p className="quote-author">— Tổng Bí thư Nguyễn Phú Trọng</p>
+            <div className="intro-image">
+              <img src="../../dbp2.jpg" alt="Chiến dịch Điện Biên Phủ" />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="cta-section">
+      <section
+        ref={ctaRef}
+        className={`cta-section scroll-reveal ${ctaVisible ? "revealed" : ""}`}
+      >
         <div className="container">
-          <h2>📖 Khám phá thêm</h2>
           <div className="cta-grid">
             <a href="/theory" className="cta-card">
               <span className="cta-icon">📚</span>
@@ -135,7 +185,7 @@ function Home() {
               <p>Tìm hiểu chi tiết về chiến dịch</p>
             </a>
             <a href="/practice" className="cta-card">
-              <span className="cta-icon">🇻🇳</span>
+              <img src={vnFlag} alt="VN" className="flag-icon" />
               <h3>Thực tiễn VN</h3>
               <p>Điện Biên Phủ ngày nay</p>
             </a>

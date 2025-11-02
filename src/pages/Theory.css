@@ -1,6 +1,5 @@
 .theory {
   min-height: 100vh;
-  background: #f8f9fa;
 }
 
 .theory-header {
@@ -63,7 +62,7 @@
 }
 
 .content-section {
-  background: white;
+  background: transparent;
   padding: 3rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);

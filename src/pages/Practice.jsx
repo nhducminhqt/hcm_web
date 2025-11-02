@@ -1,18 +1,39 @@
 import "./Practice.css";
+import vnFlag from "../../vn.png";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 function Practice() {
+  const [modernRef, modernVisible] = useScrollReveal({ triggerOnce: false });
+  const [lessonsRef, lessonsVisible] = useScrollReveal({ triggerOnce: false });
+  const [gratitudeRef, gratitudeVisible] = useScrollReveal({
+    triggerOnce: false,
+  });
+
   return (
     <div className="practice">
-      <div className="practice-header">
-        <h1>🇻🇳 Thực Tiễn Việt Nam</h1>
-        <p>Điện Biên Phủ - Từ chiến hào xưa đến hiện tại</p>
-      </div>
+      {/* Hero section giống Home */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            <span className="star">⭐</span>
+            Thực Tiễn Việt Nam
+            <img src={vnFlag} alt="VN" className="flag-icon-hero" />
+          </h1>
+          <p className="hero-subtitle">
+            Điện Biên Phủ - Từ chiến hào xưa đến hiện tại
+          </p>
+          <p className="hero-date">"Lịch sử sống mãi trong lòng dân tộc"</p>
+        </div>
+      </section>
 
       <div className="practice-container">
-        <section className="modern-section">
+        <section
+          ref={modernRef}
+          className={`modern-section scroll-reveal ${
+            modernVisible ? "revealed" : ""
+          }`}
+        >
           <h2>❤️ Điện Biên Trong Lòng Tổ Quốc Hôm Nay</h2>
-          <div className="author">Gia Huy</div>
-
           <div className="intro-quote">
             <p>
               "Từ chiến hào xưa, một Điện Biên mới đang vươn mình giữa lòng Tổ
@@ -131,10 +152,13 @@ function Practice() {
           </div>
         </section>
 
-        <section className="lessons-section">
+        <section
+          ref={lessonsRef}
+          className={`lessons-section scroll-reveal ${
+            lessonsVisible ? "revealed" : ""
+          }`}
+        >
           <h2>🌟 Bài Học Lịch Sử Và Giá Trị Thời Đại</h2>
-          <div className="author">Gia Huy</div>
-
           <p className="section-intro">
             Chiến thắng tại Điện Biên Phủ đại diện cho sức mạnh, trí tuệ và ý
             chí của người Việt Nam, đồng thời để lại nhiều bài học quý giá cho
@@ -248,9 +272,13 @@ function Practice() {
           </div>
         </section>
 
-        <section className="gratitude-section">
+        <section
+          ref={gratitudeRef}
+          className={`gratitude-section scroll-reveal ${
+            gratitudeVisible ? "revealed" : ""
+          }`}
+        >
           <h2>💝 Lời Cảm Ơn Độc Giả</h2>
-          <div className="author">Gia Huy</div>
 
           <div className="gratitude-content">
             <p className="opening-thanks">Kính gửi quý độc giả,</p>

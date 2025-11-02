@@ -238,8 +238,42 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+.message-link-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-red) 0%,
+    var(--color-accent-yellow) 100%
+  );
+  color: var(--color-bg-dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(218, 37, 28, 0.2);
+}
+
+.message-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 37, 28, 0.35);
+}
+
+.message-content {
+  max-width: 75%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
+
 .message-content.typing {
   display: flex;
+  flex-direction: row;
   gap: 0.5rem;
   padding: 1rem;
 }

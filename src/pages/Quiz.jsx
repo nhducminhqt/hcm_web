@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Quiz.css";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -7,10 +8,11 @@ function Quiz() {
   const [showScore, setShowScore] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [quizRef, quizVisible] = useScrollReveal({ triggerOnce: false });
 
   const questions = [
     {
-      question: "1️⃣ Ai là người chỉ huy Chiến dịch Điện Biên Phủ?",
+      question: " Ai là người chỉ huy Chiến dịch Điện Biên Phủ?",
       options: [
         "Đại tướng Võ Nguyên Giáp",
         "Tướng Nguyễn Chí Thanh",
@@ -22,21 +24,21 @@ function Quiz() {
         "Đại tướng Võ Nguyên Giáp – Tổng Tư lệnh Quân đội Nhân dân Việt Nam, Bí thư Đảng ủy Chiến dịch. Ông là người trực tiếp ra quyết định lịch sử chuyển phương châm 'đánh nhanh, giải quyết nhanh' sang 'đánh chắc, tiến chắc', góp phần đưa chiến dịch đến thắng lợi hoàn toàn.",
     },
     {
-      question: "2️⃣ Chiến dịch Điện Biên Phủ diễn ra trong bao nhiêu ngày đêm?",
+      question: " Chiến dịch Điện Biên Phủ diễn ra trong bao nhiêu ngày đêm?",
       options: ["45 ngày đêm", "56 ngày đêm", "60 ngày đêm", "70 ngày đêm"],
       correctAnswer: 1,
       explanation:
         "56 ngày đêm (từ 13-3-1954 đến 7-5-1954). Trong suốt 56 ngày ấy, quân và dân ta chiến đấu anh dũng, vượt qua muôn vàn khó khăn để làm nên chiến thắng vang dội 'lừng lẫy năm châu, chấn động địa cầu'.",
     },
     {
-      question: "3️⃣ 'Lừng lẫy năm châu, chấn động địa cầu' là câu thơ của ai?",
+      question: " 'Lừng lẫy năm châu, chấn động địa cầu' là câu thơ của ai?",
       options: ["Xuân Diệu", "Tố Hữu", "Chế Lan Viên", "Huy Cận"],
       correctAnswer: 1,
       explanation:
         "Tố Hữu, trong bài thơ 'Hoan hô chiến sĩ Điện Biên' (1954). Câu thơ thể hiện niềm tự hào, xúc động và tinh thần bất khuất của dân tộc Việt Nam sau chiến thắng vĩ đại.",
     },
     {
-      question: "4️⃣ Phương châm chiến lược của Đại tướng Võ Nguyên Giáp là gì?",
+      question: " Phương châm chiến lược của Đại tướng Võ Nguyên Giáp là gì?",
       options: [
         "Đánh nhanh, giải quyết nhanh",
         "Đánh chắc, tiến chắc",
@@ -48,7 +50,7 @@ function Quiz() {
         "Phương châm 'Đánh chắc, tiến chắc' được thay đổi từ 'đánh nhanh, giải quyết nhanh' thể hiện tư duy quân sự sáng tạo, linh hoạt, đảm bảo thắng lợi tuyệt đối cho quân ta.",
     },
     {
-      question: "5️⃣ Chiến thắng Điện Biên Phủ kết thúc chiến tranh nào?",
+      question: " Chiến thắng Điện Biên Phủ kết thúc chiến tranh nào?",
       options: [
         "Chiến tranh thế giới thứ hai",
         "Chiến tranh Đông Dương lần thứ nhất",
@@ -60,7 +62,7 @@ function Quiz() {
         "Chiến thắng Điện Biên Phủ đã kết thúc Chiến tranh Đông Dương lần thứ nhất (1946-1954), buộc thực dân Pháp phải ký Hiệp định Genève công nhận độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt Nam.",
     },
     {
-      question: "6️⃣ Tô Vĩnh Diện đã hy sinh như thế nào?",
+      question: " Tô Vĩnh Diện đã hy sinh như thế nào?",
       options: [
         "Trong trận chiến cuối cùng",
         "Dùng thân mình chèn vào càng pháo để cứu pháo",
@@ -72,7 +74,7 @@ function Quiz() {
         "Tô Vĩnh Diện đã dùng thân mình chèn vào càng pháo để ngăn khẩu pháo nặng hơn 2 tấn tuột xuống vực. Khẩu pháo được cứu nhưng anh bị bánh pháo đè trọng thương và hy sinh ở tuổi 30. Anh được truy tặng danh hiệu Anh hùng Lực lượng Vũ trang nhân dân.",
     },
     {
-      question: "7️⃣ Khẩu hiệu của hậu phương trong chiến dịch là gì?",
+      question: " Khẩu hiệu của hậu phương trong chiến dịch là gì?",
       options: [
         "Không có gì quý hơn độc lập, tự do",
         "Tất cả cho tiền tuyến, tất cả để chiến thắng",
@@ -84,7 +86,7 @@ function Quiz() {
         "Khẩu hiệu 'Tất cả cho tiền tuyến, tất cả để chiến thắng' đã huy động hàng chục nghìn dân công hỏa tuyến vận chuyển hàng chục nghìn tấn lương thực, vũ khí lên mặt trận, thể hiện sức mạnh đoàn kết toàn dân.",
     },
     {
-      question: "8️⃣ Đồi A1 có ý nghĩa gì trong chiến dịch?",
+      question: " Đồi A1 có ý nghĩa gì trong chiến dịch?",
       options: [
         "Nơi đặt hầm chỉ huy của ta",
         "Địa điểm quyết chiến cuối cùng",
@@ -97,7 +99,7 @@ function Quiz() {
     },
     {
       question:
-        "9️⃣ Đảng đã họp Bộ Chính trị quyết định mở chiến dịch vào tháng nào?",
+        " Đảng đã họp Bộ Chính trị quyết định mở chiến dịch vào tháng nào?",
       options: [
         "Tháng 5/1953",
         "Tháng 7/1953",
@@ -109,7 +111,7 @@ function Quiz() {
         "Tháng 9/1953, Bộ Chính trị họp dưới sự chủ trì của Chủ tịch Hồ Chí Minh, quyết định mở chiến dịch Điện Biên Phủ với phương châm kháng chiến toàn dân, toàn diện, lâu dài, dựa vào sức mình là chính.",
     },
     {
-      question: "🔟 Ý nghĩa lớn nhất của chiến thắng Điện Biên Phủ là gì?",
+      question: "Ý nghĩa lớn nhất của chiến thắng Điện Biên Phủ là gì?",
       options: [
         "Chứng minh sức mạnh quân sự Việt Nam",
         "Lần đầu dân tộc thuộc địa đánh bại đế quốc",
@@ -152,12 +154,24 @@ function Quiz() {
 
   return (
     <div className="quiz">
-      <div className="quiz-header">
-        <h1>🎲 Quiz - Kiểm Tra Kiến Thức</h1>
-        <p>Tìm hiểu về Chiến thắng Điện Biên Phủ</p>
-      </div>
+      {/* Hero section giống Home */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            <span className="star">⭐</span>
+            Kiểm Tra Kiến Thức
+          </h1>
+          <p className="hero-subtitle">Tìm hiểu về Chiến thắng Điện Biên Phủ</p>
+          <p className="hero-date">Thử thách tri thức của bạn!</p>
+        </div>
+      </section>
 
-      <div className="quiz-container">
+      <div
+        ref={quizRef}
+        className={`quiz-container scroll-reveal ${
+          quizVisible ? "revealed" : ""
+        }`}
+      >
         {showScore ? (
           <div className="score-section">
             <h2>🎉 Hoàn thành!</h2>
@@ -257,33 +271,6 @@ function Quiz() {
             )}
           </div>
         )}
-      </div>
-
-      <div className="quiz-info">
-        <h3>📖 Bạn biết chưa?</h3>
-        <div className="info-cards">
-          <div className="info-card">
-            <span className="info-icon">🎖️</span>
-            <p>
-              Chiến dịch Điện Biên Phủ có 16,200 quân địch bị tiêu diệt và bắt
-              sống
-            </p>
-          </div>
-          <div className="info-card">
-            <span className="info-icon">👥</span>
-            <p>
-              Hàng chục nghìn dân công hỏa tuyến đã vận chuyển vũ khí, lương
-              thực lên mặt trận
-            </p>
-          </div>
-          <div className="info-card">
-            <span className="info-icon">🌏</span>
-            <p>
-              Đây là lần đầu tiên một dân tộc thuộc địa đánh bại một đế quốc
-              thực dân
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

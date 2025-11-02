@@ -1,18 +1,39 @@
 import "./AIUsage.css";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 function AIUsage() {
+  const [introRef, introVisible] = useScrollReveal({ triggerOnce: false });
+  const [fieldsRef, fieldsVisible] = useScrollReveal({ triggerOnce: false });
+  const [promptsRef, promptsVisible] = useScrollReveal({ triggerOnce: false });
+  const [principlesRef, principlesVisible] = useScrollReveal({
+    triggerOnce: false,
+  });
+  const [conclusionRef, conclusionVisible] = useScrollReveal({
+    triggerOnce: false,
+  });
+
   return (
     <div className="ai-usage">
-      <div className="ai-header">
-        <h1>🤖 AI Usage - Minh Bạch AI</h1>
-        <p>Sử dụng trí tuệ nhân tạo có trách nhiệm</p>
-      </div>
+      {/* Hero section giống Home */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            <span className="star">⭐</span>
+            AI Usage - Minh Bạch AI
+          </h1>
+          <p className="hero-subtitle">
+            Sử dụng trí tuệ nhân tạo có trách nhiệm
+          </p>
+          <p className="hero-date">Công khai & Minh bạch</p>
+        </div>
+      </section>
 
       <div className="ai-container">
-        <section className="ai-intro">
+        <section
+          ref={introRef}
+          className={`ai-intro scroll-reveal ${introVisible ? "revealed" : ""}`}
+        >
           <h2>✍️ Minh bạch việc sử dụng AI trong phát triển Website</h2>
-          <div className="author">Bảo Ngọc</div>
-
           <p className="intro-text">
             Trong quá trình phát triển website này, nhóm đã sử dụng AI một cách{" "}
             <strong>minh bạch và có trách nhiệm</strong> để hỗ trợ nghiên cứu,
@@ -47,7 +68,12 @@ function AIUsage() {
           </div>
         </section>
 
-        <section className="ai-fields">
+        <section
+          ref={fieldsRef}
+          className={`ai-fields scroll-reveal ${
+            fieldsVisible ? "revealed" : ""
+          }`}
+        >
           <h2>🎯 Các lĩnh vực sử dụng AI</h2>
 
           <div className="fields-grid">
@@ -81,7 +107,6 @@ function AIUsage() {
             </div>
 
             <div className="field-card">
-              <div className="field-icon">📖</div>
               <h3>Tổng hợp Nội dung</h3>
               <p>
                 AI hỗ trợ tổng hợp kiến thức từ lý thuyết Marx-Lenin, văn kiện
@@ -110,8 +135,13 @@ function AIUsage() {
           </div>
         </section>
 
-        <section className="ai-prompts">
-          <h2>📝 Các Prompt chính đã sử dụng</h2>
+        <section
+          ref={promptsRef}
+          className={`ai-prompts scroll-reveal ${
+            promptsVisible ? "revealed" : ""
+          }`}
+        >
+          <h2>💡 Ví Dụ Prompt Thực Tế</h2>
 
           <div className="prompts-container">
             <div className="prompt-group">
@@ -185,8 +215,13 @@ function AIUsage() {
           </div>
         </section>
 
-        <section className="ai-principles">
-          <h2>⚖️ Nguyên tắc sử dụng AI có trách nhiệm</h2>
+        <section
+          ref={principlesRef}
+          className={`ai-principles scroll-reveal ${
+            principlesVisible ? "revealed" : ""
+          }`}
+        >
+          <h2>⚖️ Nguyên Tắc Sử Dụng</h2>
 
           <div className="principles-grid">
             <div className="principle-card">
@@ -231,7 +266,7 @@ function AIUsage() {
         </section>
 
         <section className="ai-disclaimer">
-          <h2>⚠️ Lưu ý quan trọng</h2>
+          <h2>⚠️ Tuyên Bố Miễn Trừ</h2>
           <div className="disclaimer-content">
             <div className="disclaimer-box">
               <p>
@@ -259,7 +294,12 @@ function AIUsage() {
           </div>
         </section>
 
-        <section className="ai-conclusion">
+        <section
+          ref={conclusionRef}
+          className={`ai-conclusion scroll-reveal ${
+            conclusionVisible ? "revealed" : ""
+          }`}
+        >
           <div className="conclusion-box">
             <h3>🌟 Kết luận</h3>
             <p>
