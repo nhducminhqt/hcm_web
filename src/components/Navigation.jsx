@@ -119,6 +119,15 @@ function Navigation() {
               AI Usage
             </Link>
           </li>
+          <li>
+            <a
+              href="https://heyzine.com/flip-book/096435bafe.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Flipbook
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

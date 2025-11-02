@@ -31,61 +31,6 @@ function Theory() {
 
       {/* Timeline with 4 sections */}
       <div className="theory-timeline">
-        {/* Section 1: Lời Tòa Soạn */}
-        <section
-          ref={section1Ref}
-          className={`content-section editorial-section scroll-reveal ${
-            section1Visible ? "revealed" : ""
-          }`}
-        >
-          <div className="timeline-number">01</div>
-          <h2>📝 Lời Tòa Soạn</h2>
-
-          <div className="content-body">
-            <p className="lead-paragraph">
-              Gần 70 năm trôi qua, chiến thắng Điện Biên Phủ (7/5/1954) vẫn vang
-              vọng như bản hùng ca bất diệt trong lịch sử dân tộc. Tạp chí VNR
-              số tháng 10/2025 xin được dành trọn số này để tái hiện lại tinh
-              thần chiến đấu quật cường của quân dân ta, dưới sự lãnh đạo sáng
-              suốt của Đảng Cộng sản Việt Nam và Chủ tịch Hồ Chí Minh.
-            </p>
-
-            <p>
-              Qua những bài viết, câu chuyện và góc nhìn lịch sử, chúng tôi mong
-              muốn truyền tải đến độc giả – đặc biệt là thế hệ sinh viên – niềm
-              tự hào và trách nhiệm tiếp nối truyền thống vẻ vang của dân tộc.
-            </p>
-
-            <div className="quote-box">
-              <p>
-                "Chiến thắng Điện Biên Phủ không chỉ là thắng lợi quân sự, mà
-                còn là thắng lợi về chính trị, ngoại giao - một minh chứng rõ
-                ràng về sức mạnh vô địch của chủ nghĩa yêu nước và ý chí độc lập
-                dân tộc."
-              </p>
-            </div>
-
-            <p>Trong số báo này, chúng tôi sẽ cùng nhau:</p>
-            <ul className="magazine-outline">
-              <li>Nhìn lại 56 ngày đêm lịch sử của chiến dịch</li>
-              <li>
-                Lắng nghe những câu chuyện cảm động về người lính Việt Nam
-              </li>
-              <li>
-                Phân tích vai trò lãnh đạo của Đảng - nguồn gốc của chiến thắng
-              </li>
-              <li>Khám phá Điện Biên Phủ trong lòng Tổ quốc hôm nay</li>
-              <li>Rút ra những bài học quý báu cho thế hệ trẻ</li>
-            </ul>
-
-            <p className="closing">
-              Hãy cùng chúng tôi trở về với trang sử vàng của dân tộc, để từ đó
-              vững bước trên con đường xây dựng đất nước giàu mạnh, văn minh và
-              hạnh phúc!
-            </p>
-          </div>
-        </section>
-
         {/* Section 2: Góc Nhìn Lịch Sử */}
         <section
           ref={section2Ref}
@@ -93,7 +38,7 @@ function Theory() {
             section2Visible ? "revealed" : ""
           }`}
         >
-          <div className="timeline-number">02</div>
+          <div className="timeline-number">01</div>
           <h2>🕰️ Chiến Dịch Điện Biên Phủ – 56 Ngày Đêm Làm Nên Lịch Sử</h2>
 
           <div className="content-body">
@@ -235,7 +180,7 @@ function Theory() {
             section3Visible ? "revealed" : ""
           }`}
         >
-          <div className="timeline-number">03</div>
+          <div className="timeline-number">02</div>
           <h2>🪖 Dấu Chân Người Lính - Tô Vĩnh Diện</h2>
 
           <div className="content-body">
@@ -368,7 +313,7 @@ function Theory() {
             section4Visible ? "revealed" : ""
           }`}
         >
-          <div className="timeline-number">04</div>
+          <div className="timeline-number">03</div>
           <h2>🔥 Sức Mạnh Của Đảng – Nguồn Gốc Của Chiến Thắng</h2>
 
           <div className="content-body">

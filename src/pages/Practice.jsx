@@ -277,11 +277,9 @@ function Practice() {
             gratitudeVisible ? "revealed" : ""
           }`}
         >
-          <h2>💝 Lời Cảm Ơn Độc Giả</h2>
+          <h2>💝 Lời Cảm Ơn</h2>
 
           <div className="gratitude-content">
-            <p className="opening-thanks">Kính gửi quý độc giả,</p>
-
             <p>
               Với tâm lòng trân trọng, tôi xin gửi lời cảm ơn sâu sắc đến tất cả
               những ai đã bỏ thời gian để cùng theo dõi bài viết này.
