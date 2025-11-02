@@ -1,5 +1,4 @@
 import "./Practice.css";
-import vnFlag from "../../vn.png";
 import useScrollReveal from "../hooks/useScrollReveal";
 
 function Practice() {
@@ -17,7 +16,7 @@ function Practice() {
           <h1 className="hero-title">
             <span className="star">⭐</span>
             Thực Tiễn Việt Nam
-            <img src={vnFlag} alt="VN" className="flag-icon-hero" />
+            <img src="/vn.png" alt="VN" className="flag-icon-hero" />
           </h1>
           <p className="hero-subtitle">
             Điện Biên Phủ - Từ chiến hào xưa đến hiện tại

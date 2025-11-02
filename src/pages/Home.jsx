@@ -1,11 +1,5 @@
 import "./Home.css";
 import useScrollReveal from "../hooks/useScrollReveal";
-import vnFlag from "../../vn.png";
-import clockIcon from "../../clock.png";
-import battleIcon from "../../battle.png";
-import earthIcon from "../../earth.png";
-import dbp1 from "../../dbp1.jpg";
-import dbp2 from "../../dbp2.jpg";
 
 function Home() {
   const [introRef, introVisible] = useScrollReveal({ triggerOnce: false });
@@ -49,7 +43,7 @@ function Home() {
               Nam và Chủ tịch Hồ Chí Minh.
             </p>
             <div className="intro-image">
-              <img src={dbp1} alt="Chiến dịch Điện Biên Phủ" />
+              <img src="/dbp1.jpg" alt="Chiến dịch Điện Biên Phủ" />
             </div>
           </div>
           <div
@@ -61,7 +55,7 @@ function Home() {
             <div className="stat-card">
               <div className="stat-icon">
                 <img
-                  src={clockIcon}
+                  src="/clock.png"
                   alt="Ngày đêm chiến đấu"
                   className="stat-img"
                 />
@@ -74,7 +68,7 @@ function Home() {
             <div className="stat-card">
               <div className="stat-icon">
                 <img
-                  src={battleIcon}
+                  src="/battle.png"
                   alt="Quân Pháp bị tiêu diệt"
                   className="stat-img"
                 />
@@ -87,7 +81,7 @@ function Home() {
             <div className="stat-card">
               <div className="stat-icon">
                 <img
-                  src={earthIcon}
+                  src="/earth.png"
                   alt="Ý nghĩa lịch sử"
                   className="stat-img"
                 />
@@ -112,7 +106,7 @@ function Home() {
           <div className="significance-grid">
             <div className="significance-card">
               <div className="card-header">
-                <img src={vnFlag} alt="VN" className="flag-icon" />
+                <img src="/vn.png" alt="VN" className="flag-icon" />
                 <h3>Đối với Việt Nam</h3>
               </div>
               <ul>
@@ -169,7 +163,7 @@ function Home() {
             </p>
             <p className="quote-author">— Tổng Bí thư Nguyễn Phú Trọng</p>
             <div className="intro-image">
-              <img src={dbp2} alt="Chiến dịch Điện Biên Phủ" />
+              <img src="/dbp2.jpg" alt="Chiến dịch Điện Biên Phủ" />
             </div>
           </div>
         </div>
@@ -187,7 +181,7 @@ function Home() {
               <p>Tìm hiểu chi tiết về chiến dịch</p>
             </a>
             <a href="/practice" className="cta-card">
-              <img src={vnFlag} alt="VN" className="flag-icon" />
+              <img src="/vn.png" alt="VN" className="flag-icon" />
               <h3>Thực tiễn VN</h3>
               <p>Điện Biên Phủ ngày nay</p>
             </a>
