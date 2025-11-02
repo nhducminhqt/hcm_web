@@ -1,0 +1,58 @@
+:root {
+  --color-primary-red: #da251c; /* main red */
+  --color-accent-yellow: #ffcd00; /* accent yellow/gold */
+  --color-bg: #fff8f2; /* light cream background */
+  --color-bg-dark: #fff2e6; /* slightly darker cream */
+  --color-surface: #ffffff; /* cards / panels */
+  --color-on-dark: #0b0b0b; /* primary text color (black) */
+  --color-muted: #6b6b6b; /* muted text */
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg) 0%,
+    var(--color-bg-dark) 100%
+  );
+  color: var(--color-on-dark); /* keep text black */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
