@@ -4,6 +4,8 @@ import vnFlag from "../../vn.png";
 import clockIcon from "../../clock.png";
 import battleIcon from "../../battle.png";
 import earthIcon from "../../earth.png";
+import dbp1 from "../../dbp1.jpg";
+import dbp2 from "../../dbp2.jpg";
 
 function Home() {
   const [introRef, introVisible] = useScrollReveal({ triggerOnce: false });
@@ -47,7 +49,7 @@ function Home() {
               Nam và Chủ tịch Hồ Chí Minh.
             </p>
             <div className="intro-image">
-              <img src="../../dbp1.jpg" alt="Chiến dịch Điện Biên Phủ" />
+              <img src={dbp1} alt="Chiến dịch Điện Biên Phủ" />
             </div>
           </div>
           <div
@@ -167,7 +169,7 @@ function Home() {
             </p>
             <p className="quote-author">— Tổng Bí thư Nguyễn Phú Trọng</p>
             <div className="intro-image">
-              <img src="../../dbp2.jpg" alt="Chiến dịch Điện Biên Phủ" />
+              <img src={dbp2} alt="Chiến dịch Điện Biên Phủ" />
             </div>
           </div>
         </div>
