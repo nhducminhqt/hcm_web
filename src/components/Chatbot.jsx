@@ -18,6 +18,7 @@ function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [lastRequestTime, setLastRequestTime] = useState(0);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -30,6 +31,22 @@ function Chatbot() {
 
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
+
+    // Rate limiting: tối thiểu 2 giây giữa các request
+    const now = Date.now();
+    const timeSinceLastRequest = now - lastRequestTime;
+    if (timeSinceLastRequest < 2000) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "⏳ Vui lòng chờ 2 giây trước khi gửi câu hỏi tiếp theo.",
+        },
+      ]);
+      return;
+    }
+
+    setLastRequestTime(now);
 
     const userMessage = input.trim();
     setInput("");
@@ -63,6 +80,9 @@ Câu hỏi: ${userMessage}`;
       });
 
       if (!response.ok) {
+        if (response.status === 429) {
+          throw new Error("RATE_LIMIT");
+        }
         throw new Error(`API Error: ${response.status}`);
       }
 
@@ -78,12 +98,20 @@ Câu hỏi: ${userMessage}`;
       ]);
     } catch (error) {
       console.error("Gemini API Error:", error);
+
+      let errorMessage =
+        "Xin lỗi, tôi gặp lỗi khi xử lý câu hỏi của bạn. Vui lòng thử lại sau. 🙏";
+
+      if (error.message === "RATE_LIMIT") {
+        errorMessage =
+          "⏱️ Bạn đã gửi quá nhiều yêu cầu! Vui lòng chờ 1 phút rồi thử lại. (Giới hạn: 60 requests/phút)";
+      }
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "Xin lỗi, tôi gặp lỗi khi xử lý câu hỏi của bạn. Vui lòng thử lại sau. 🙏",
+          content: errorMessage,
         },
       ]);
     } finally {
