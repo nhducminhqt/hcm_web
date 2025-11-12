@@ -40,10 +40,7 @@ function Chatbot() {
 
     try {
       // Create context-aware prompt for Gemini
-      const prompt = `Bạn là một trợ lý AI chuyên về Chiến thắng Điện Biên Phủ năm 1954. 
-Hãy trả lời câu hỏi sau một cách chính xác, ngắn gọn và dễ hiểu (khoảng 2-4 câu).
-Chỉ trả lời về lịch sử Điện Biên Phủ và các chủ đề liên quan.
-Nếu câu hỏi không liên quan đến Điện Biên Phủ, hãy lịch sự từ chối và hướng dẫn người dùng hỏi về chủ đề phù hợp.
+      const prompt = `Bạn là một trợ lý AI thân thiện và hữu ích. Hãy trả lời câu hỏi sau một cách ngắn gọn, chính xác và dễ hiểu.
 
 Câu hỏi: ${userMessage}`;
 
