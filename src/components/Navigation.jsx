@@ -121,7 +121,7 @@ function Navigation() {
           </li>
           <li>
             <a
-              href="https://heyzine.com/flip-book/54ea2d37cc.html"
+              href="https://heyzine.com/flip-book/73d885d24c.html"
               target="_blank"
               rel="noopener noreferrer"
             >
